@@ -1,0 +1,782 @@
+/*
+* @Author: 侯辉
+* @Date:   2017-12-18 10:07:09
+* @Last Modified by:   侯辉
+* @Last Modified time: 2017-12-22 15:44:11
+*/
+#fp-nav {
+  position: fixed;
+  z-index: 100;
+  margin-top: -32px;
+  top: 50%;
+  opacity: 1;
+  -webkit-transform: translate3d(0,0,0);
+}
+#fp-nav.right {
+  right: 17px;
+}
+#fp-nav.left {
+  left: 17px;
+}
+.fp-slidesNav{
+  position: absolute;
+  z-index: 4;
+  opacity: 1;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  left: 0 !important;
+  right: 0;
+  margin: 0 auto !important;
+}
+.fp-slidesNav.bottom {
+  bottom: 17px;
+}
+.fp-slidesNav.top {
+  top: 17px;
+}
+#fp-nav ul,
+.fp-slidesNav ul {
+margin: 0;
+padding: 0;
+}
+#fp-nav ul li,
+.fp-slidesNav ul li {
+  display: block;
+  width: 14px;
+  height: 13px;
+  margin: 7px;
+  position:relative;
+}
+.fp-slidesNav ul li {
+  display: inline-block;
+}
+#fp-nav ul li a,
+.fp-slidesNav ul li a {
+  display: block;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  text-decoration: none;
+}
+#fp-nav ul li a.active span,
+.fp-slidesNav ul li a.active span,
+#fp-nav ul li:hover a.active span,
+.fp-slidesNav ul li:hover a.active span{
+  height: 12px;
+  width: 12px;
+  margin: -6px 0 0 -6px;
+  border-radius: 100%;
+}
+#fp-nav ul li a span,
+.fp-slidesNav ul li a span {
+  border-radius: 50%;
+  position: absolute;
+  z-index: 1;
+  height: 4px;
+  width: 4px;
+  border: 0;
+  background: #333;
+  left: 50%;
+  top: 50%;
+  margin: -2px 0 0 -2px;
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  -o-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+}
+#fp-nav ul li:hover a span,
+.fp-slidesNav ul li:hover a span{
+  width: 10px;
+  height: 10px;
+  margin: -5px 0px 0px -5px;
+}
+#fp-nav ul li .fp-tooltip {
+  position: absolute;
+  top: -2px;
+  color: #fff;
+  font-size: 14px;
+  font-family: arial, helvetica, sans-serif;
+  white-space: nowrap;
+  max-width: 220px;
+  overflow: hidden;
+  display: block;
+  opacity: 0;
+  width: 0;
+  cursor: pointer;
+}
+#fp-nav ul li:hover .fp-tooltip,
+#fp-nav.fp-show-active a.active + .fp-tooltip {
+  -webkit-transition: opacity 0.2s ease-in;
+  transition: opacity 0.2s ease-in;
+  width: auto;
+  opacity: 1;
+}
+#fp-nav ul li .fp-tooltip.right {
+  right: 20px;
+}
+#fp-nav ul li .fp-tooltip.left {
+  left: 20px;
+}
+
+
+/* 第一屏幕 */
+
+/* 直接进入购物中心 */
+.shoppingcenter{
+  position:fixed;
+  right:67px;
+  top:34px;
+  z-index:100;
+}
+
+/* 背景图 */
+.qbh-title{
+	background-image:url("../image/qbh-title-bg.png");
+	background-position:center bottom;
+	background-repeat:no-repeat;
+	position:relative;
+}
+
+/* 沙发的样式 */
+.qbh-title .qbh-title-sofa{
+	position:absolute;
+	left:50%;
+	bottom:370px;
+	transform:translateX(-200px);
+
+	animation:sofa 2s linear infinite;
+}
+/* 沙发的动画 */
+
+@keyframes sofa{
+
+	0%{
+		bottom:370px;
+	}
+	50%{
+		bottom:320px;
+	}
+	100%{
+		bottom:370px;
+	}
+	
+}
+
+
+
+/* 网站名称的样式 */
+.qbh-title .qbh-title-name{
+	position:absolute;
+	left:40%;
+	top:10%;
+	animation:name 2s linear infinite;
+	
+}
+
+/* 网站名称的动画 */
+@keyframes name{
+	0%{
+		top:10%;
+	}
+	50%{
+		top:15%;
+	}
+	100%{
+		top:10%;
+	}
+}
+
+
+
+
+
+
+/* 第二屏幕 */
+
+.qbh-list{
+	background-image: url("../image/qbh-list-bg.png");
+	background-position:center bottom;
+	background-repeat:no-repeat;
+	position:relative;
+}
+
+.qbh-list .qbh-list-word{
+	  position: absolute;
+    left: 280px;
+    top: 63px;
+    /* background: green; */
+    width: 363px;
+    height: 27px;
+}
+.qbh-list .qbh-list-word img{
+    position:absolute;
+}
+.qbh-list .qbh-list-word .qbh-list-worda{
+    opacity:1;
+}
+.qbh-list .qbh-list-word .qbh-list-wordb{
+    opacity:0;
+}
+.qbh-list .qbh-list-computer{
+	  position: absolute;
+    /* background-color: blue; */
+    left: 50%;
+    margin-left: -290px;
+    bottom: 0px;
+    /* border: 1px solid #000; */
+    width: 574px;
+    height: 486px;
+    box-sizing: border-box;
+    /* overflow-x: hidden; */
+
+}
+.qbh-list .qbh-list-computer .qbh-list-search-box{
+    opacity: 0;
+    background-image: url(../image/qbh-list-search-box.png);
+    position: absolute;
+    right: -223px;
+    bottom: 300px;
+    /* background-color: red; */
+    width: 222px;
+    height: 45px;
+}
+.qbh-list .qbh-list-search-box .qbh-list-search-font{
+	  position:absolute;
+    left: 133px;
+    top: 5px;
+/*  width: 55px;
+    height: 24px;
+ */
+}
+
+.qbh-list .qbh-list-computer .qbh-list-search-finish{
+  display:none;
+  position:absolute;
+  right: 162px;
+  bottom: 300px;
+}
+.qbh-list-computer .qbh-list-sofa{
+    position: absolute;
+    left: 0;
+    top: 42px;
+    width: 573px;
+    height: 247px;
+    /* background: blue; */
+}
+.qbh-list-computer .qbh-list-sofa .qbh-list-sofas{
+    width:0;
+    position: absolute;
+    left: 61px;
+    top: 17px;
+    /* 441 218 */
+}
+
+.qbh-list-computer .qbh-list-sofa .qbh-list-sofa-pic{
+    position: absolute;
+    left: 178px;
+    top: 25px;
+    /* top:600px; */
+    width: 98px;
+    display:none;
+    z-index:10;
+}
+
+/* 第三屏 */
+
+.qbh-buy{
+  position:relative;
+}
+
+.qbh-buy .qbh-buy-main{
+  position:absolute;
+  background-image:url("../image/qbh-buy-main-bg.png");
+  background-position:center center;
+  background-repeat:no-repeat;
+  width:990px;
+  height:600px;
+  left:50%;
+  top:50%;
+  margin-left:-495px;
+  margin-top:-300px;
+}
+
+.qbh-buy .qbh-buy-main>div{
+    position: absolute;
+    left: 533px;
+    top: 314px;
+    /* width: 300px; */
+    /* height: 200px; */
+    /* background-color: pink; */
+    /* opacity: 0.1; */
+}
+.qbh-buy .qbh-buy-main > div.choose{
+  opacity:0;
+
+}
+
+.qbh-buy .qbh-buy-main > div.no-choose{
+  opacity:1;
+}
+.qbh-buy .qbh-buy-main > div > img:last-child {
+  margin-top:  30px;
+}
+
+.qbh-buy .qbh-buy-main .qbh-buy-main-sofatofour{
+    display:none;
+    position: absolute;
+    top: 195px;
+    left: 270px;
+    z-index: 2;
+}
+
+/* 第四屏 */
+.qbh-info{
+  position:relative;
+  background-image:url("../image/qbh-info-bg.png");
+  /* background-position:center bottom; */
+  background-position:center center;
+  background-repeat:no-repeat;
+
+}
+/* 移动的云 */
+.qbh-info .qbh-info-cloud{
+  position:absolute;
+  top:0;
+  /* left:0; */
+  animation:moveCloud 15s ease-in-out infinite;
+}
+
+@keyframes moveCloud{
+  0%{
+    left:0;
+  }
+  50%{
+    left:500px;
+  }
+  100%{
+    left:0;
+  }
+}
+
+
+
+
+.qbh-info .qbh-info-cart-sofa{
+  position:absolute;
+}
+
+.qbh-info .qbh-info-cart-sofa .qbh-info-cart{
+    position: absolute;
+    left: 311px;
+    top: 277px;
+    width: 328px;
+
+}
+
+.qbh-info .qbh-info-cart-sofa .qbh-info-rotate-sofa{
+    position: absolute;
+    left: 414px;
+    top: 190px;
+    /* opacity: 0.5; */
+    display:none;
+}
+
+.qbh-info .qbh-info-word{
+    position: absolute;
+    width: 429px;
+    height: 32px;
+    top: 143px;
+    left:50%;
+    transform:translateX(-50%);
+    /* background: pink; */
+    /* opacity: 0.3; */
+}
+.qbh-info .qbh-info-word img{
+  position:absolute;
+}
+.qbh-info .qbh-info-word .qbh-info-worda{
+  opacity:1;
+}
+
+.qbh-info .qbh-info-word .qbh-info-wordb{
+  opacity:0;
+}
+
+
+.qbh-info .qbh-info-address-box{
+  position:absolute;
+  background-image:url(../image/qbh-info-address-box.png);
+  width:283px;
+  height:270px;
+  /* left: 321px; */
+  left:50%;
+  transform:translateX(-50%);
+  top: 185px;
+  /* background-color:pink; */
+  /* z-index:4; */
+  display:none;
+}
+
+.qbh-info .qbh-info-address-box img{
+  position:absolute;
+  left: 33px;
+  top: 55px;
+}
+
+/* 第五屏 */
+.qbh-payment{
+  position:relative;
+  background-image:url("../image/qbh-payment-bg.png");
+  /* background-position:center center; */
+  /* background-repeat:no-repeat; */
+}
+
+.qbh-payment .qbh-payment-main{
+  /* 在相对定位的情况下使用margin：0 auto 才可以水平居中 */
+  position:relative;
+  width:1250px;
+  height:100%;
+  /* background-color:lightpink; */
+  margin:0 auto;
+
+}
+
+.qbh-payment .qbh-payment-main .qbh-payment-mouse{
+    position: absolute;
+    /* width: 205px; */
+    width: 210px;
+    /* height: 819px; */
+    height: 820px;
+    left: 809px;
+    top: -417px;
+}
+.qbh-payment .qbh-payment-mouse img{
+  position:absolute;
+}
+
+.qbh-payment .qbh-payment-mouse img:first-child{
+  opacity:1;
+}
+.qbh-payment .qbh-payment-mouse img:last-child{
+  opacity:0;
+}
+
+.qbh-payment .qbh-payment-main .qbh-payment-hands{
+    position: absolute;
+    width: 170px;
+    height: 375px;
+    left: 783px;
+    bottom: -39px;
+    overflow:hidden;
+
+    /* top: 392 */
+}
+
+.qbh-payment .qbh-payment-main .qbh-payment-tips{
+  position:absolute;
+  left: 214px;
+  top: 4px;
+  width:541px;
+  height:56px;
+  z-index:2;
+}
+
+.qbh-payment .qbh-payment-main .qbh-payment-card{
+  position:absolute;
+  width: 358px;
+  height: 553px;
+  left: 242px;
+  top: 61px;
+  /* background-color:blue; */
+  /* z-index:2; */
+}
+.qbh-payment .qbh-payment-main .qbh-payment-card img{
+  position:absolute;
+}
+.qbh-payment-main .qbh-payment-card img:first-child{
+    left: 107px;
+    top: 151px;
+    /* top: 64px; */
+}
+.qbh-payment .qbh-payment-card img:nth-child(2){
+    left: 0px;
+    top: 131px;
+    z-index:10;
+
+}
+.qbh-payment .qbh-payment-card img:last-child{
+    left: 64px;
+    top: 169px;
+    /* top: 263px; */
+
+}
+
+.qbh-payment .qbh-info-rotate-sofa{
+  display:none;
+  position:absolute;
+  left: 307px;
+  top: -106px;
+ /* top: 192px; */
+ z-index:5;
+}
+
+
+
+
+
+
+
+
+/* 第六屏 */
+
+.qbh-delivery{
+  position:relative;
+  background-image:url(../image/qbh-delivery-bg.png);
+  background-position:25% bottom;
+  background-repeat:no-repeat;
+}
+
+.qbh-delivery .qbh-delivery-cloud{
+  position:absolute;
+  left:0;
+  top:0;
+ 
+}
+
+.qbh-delivery .qbh-delivery-cloud img:first-child{
+  position:absolute;
+  left:0;
+  top:0;
+  animation:cloudOne 10s linear infinite;
+}
+
+@keyframes cloudOne{
+  0%{
+    left:-50px;
+  }
+  50%{
+    left:0px;
+  }
+  100%{
+    left:-50px;
+  }
+}
+
+.qbh-delivery .qbh-delivery-cloud img:last-child{
+  position:absolute;
+  left:600px;
+  top:100px;
+  animation:cloudTwo 20s linear infinite;
+}
+@keyframes cloudTwo{
+  0%{
+    left:300px;
+  }
+  50%{
+    left:600px;
+  }
+  100%{
+    left:300px;
+  }
+}
+.qbh-delivery .qbh-delivery-box{
+  display:none;
+  position:absolute;
+  left: 28px;
+  top: 206px;
+  z-index:10;
+
+ /*    left: 449px;
+    top: 145px; */
+
+   /*  top: 500px;
+    left: 500px;
+    width: 10px; */
+}
+
+.qbh-delivery .qbh-delivery-truck{
+  position:absolute;
+  left: 343px;
+  top: 500px;
+}
+
+.qbh-delivery .qbh-delivery-font{
+  position:absolute;
+  left: 336px;
+  top: 150px;
+  width:308px;
+  height:59px;
+}
+.qbh-delivery .qbh-delivery-font img{
+  position:absolute;
+}
+.qbh-delivery .qbh-delivery-font img:last-child{
+  display:none;
+}
+.qbh-delivery .qbh-delivery-truck-font{
+    display:none;
+    position:absolute;
+    top: 450px;
+    left: 506px;
+    z-index:10;
+}
+
+.qbh-delivery .qbh-delivery-deliveryman{
+    /* display:none; */
+    position: absolute;
+    right: 631px;
+    bottom: 7px;
+    width: 5px;
+
+    /* right: 767px;
+    bottom: 103px; */
+
+        /* right: 454px; */
+}
+
+.qbh-delivery .qbh-delivery-shouhuo{
+    opacity:0;
+    position:absolute;
+    right: 452px;
+    bottom: 432px;
+
+}
+.qbh-delivery .qbh-delivery-door{
+    display:none;
+    position:absolute;
+    right: 286px;
+    bottom: 116px;
+}
+.qbh-delivery .qbh-delivery-buyer{
+    opacity:0;
+    position:absolute;
+    right: 390px;
+    bottom: 115px;
+}
+
+
+
+/* 第七屏 */
+.qbh-appraise{
+  position:relative;
+  background-image:url(../image/qbh-appraise-bg.png);
+  /* background-repeat:no-repeat; */
+  background-position:center bottom;
+
+}
+
+.qbh-appraise .qbh-appraise-main{
+    position:absolute;
+    left: 50%;
+    margin-left: -343px;
+    top: 50%;
+    margin-top: -170px;
+    width: 312px;
+    height: 125px;
+    width: 312px;
+    height: 125px;
+  /* background-color: #fff; */
+  /* opacity:0.4; */
+}
+
+.qbh-appraise .qbh-appraise-star{
+    position:absolute;
+    left: 50px;
+    top: 23px;
+    width: 0;
+    height: 13px;
+    /* 行内块级元素的img默认的边距3像素 */
+    font-size:0;
+    overflow:hidden;
+}
+.qbh-appraise .qbh-appraise-star img{
+  /* position:absolute; */
+  display:inline-block;
+  margin-right:6px;
+
+  vertical-align:center;
+}
+.qbh-appraise .qbh-appraise-star.star {
+  /* 通过5步走完 停止在结束状态 */
+  animation: star 2.5s 1s steps(5) forwards;
+}
+
+@keyframes star {
+  from {
+    width: 0px;
+  }
+  to{
+    width: 100px;
+  }
+}
+.qbh-appraise .qbh-appraise-haoping{
+    /* display:none; */
+    position:absolute;
+    left: 195px;
+    top: 56px;
+    width: 2px;
+    height:40px;
+
+
+/*     left: 59px;
+    top: 56px; */
+}
+
+.qbh-appraise .qbh-appraise-haoping.haoping{
+  animation:haoping 2s 2s ease-in forwards ;
+}
+
+@keyframes haoping{
+  0%{width:2px;left:195px;}
+  50%{width:2px;left:59px;}
+  100%{width:72px;left:59px;}
+}
+
+
+/* 第八屏 */
+
+.qbh-shopping{
+  position:relative;
+  background-image:url("../image/qbh-shopping-bg.png");
+  background-position:center bottom;
+  /* background-repeat:no-repeat; */
+
+}
+
+.qbh-shopping .qbh-shopping-main{
+    position:absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -205px;
+    margin-top: -159px;
+    width: 690px;
+    height: 160px;
+    /* background-color: #fff; */
+    /* opacity: 0.3; */
+}
+.qbh-shopping .qbh-shopping-btn{
+    width: 390px;
+    height: 160px;
+    background-color: pink;
+}
+.qbh-shopping .qbh-shopping-btn img{
+  position:absolute;
+}
+.qbh-shopping .qbh-shopping-btn img:last-child{
+  display:none;
+}
+.qbh-shopping .qbh-shopping-main .qbh-shopping-btn-again{
+    position:absolute;
+    left: 444px;
+    top: 61px;
+}
+
+.qbh-shopping .qbh-shopping-hands{
+  position:absolute;
+  z-index:10;
+  /* left:0;
+  top:0; */
+}
